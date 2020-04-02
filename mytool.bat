@@ -18,7 +18,7 @@ if "%len%" == "?" (
 ) else if "%len%" == "cm" (
 	call :CustomMode
 	goto default
-) else if "%len%" GTR "10000" (
+) else if "%len%" GTR 10000 (
 	echo ERROR, input a SMALLER number or use CUSTOM MODE
 	set len=
 	goto input1
@@ -37,6 +37,8 @@ if "%mod%" == "?" (
 	set StrList=abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
 ) else if "%mod%" == "4" (
 	set StrList=abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*:;,.-+
+) else if "%mod%" == "5" (
+	set StrList=abcdefghijklmnopqrstuvwxyz
 ) else if "%mod%" == "d" (
 	set StrList=
 	goto default
@@ -123,6 +125,7 @@ echo Mode 1: String List: 0-9 ;
 echo Mode 2: String List: 0-9 and a-z ;
 echo Mode 3: String List: 0-9, a-z and  A-Z ;
 echo Mode 4: String List: 0-9, a-z, A-Z and !@#$%^&*:;,.-+ ;
+echo Mode 5: String List: a-z ;
 echo,
 echo In Custom Mode, you can input a number as large as you can, and you can also use your string list. 
 echo,
